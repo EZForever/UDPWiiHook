@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>8302fed9-325c-40df-8efc-fa306bee5510</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>UDPWiiHook</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DSU\Crc32.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DSU\DSU.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DSU\Server.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Program.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UDPWii\Broadcaster.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UDPWii\Server.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UDPWii\UDPWii.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Util.cs" />
+  </ItemGroup>
+</Project>
