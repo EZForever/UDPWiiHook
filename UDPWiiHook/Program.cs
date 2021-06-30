@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Linq;
 using System.Net.Sockets;
 
 namespace UDPWiiHook
@@ -21,10 +23,19 @@ namespace UDPWiiHook
                     new UDPWii.Server(id, 2, 4436),
                     new UDPWii.Server(id, 3, 4437)
                 };
+
+                Console.WriteLine("[Program] Possible UDPWii.Server addresses:");
+                Dns.GetHostEntry(Dns.GetHostName()).AddressList
+                    .Where(x => x.AddressFamily == AddressFamily.InterNetwork)
+                    .Select(x => x.ToString())
+                    .Where(x => !x.StartsWith("169.254."))
+                    .ToList()
+                    .ForEach(x => Console.WriteLine("\t" + x));
             }
-            catch(SocketException)
+            catch(SocketException e)
             {
-                Console.Error.WriteLine("[Program] SocketException (running multiple instances?)");
+                Console.Error.WriteLine("[Program] SocketException (running multiple instances?):");
+                Console.Error.WriteLine("\t" + e.Message);
                 return;
             }
 
