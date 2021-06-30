@@ -268,6 +268,7 @@ namespace UDPWiiHook.UDPWii
                         L, D, R, U => Analog.{L, D, R, U}
                         A, B, 1, 2 => Analog.{A, B, X, Y}
                         P, M, H    => Buttons.{R3, L3, Options}
+                        SK         => Buttons.Share
                 */
                 if ((buttons & Buttons.BL) != 0) packet.analog.DPadLeft = 0xff;
                 if ((buttons & Buttons.BD) != 0) packet.analog.DPadDown = 0xff;
@@ -280,7 +281,7 @@ namespace UDPWiiHook.UDPWii
                 if ((buttons & Buttons.BP) != 0) packet.buttons |= DSU.DataRsp.Buttons.R3;
                 if ((buttons & Buttons.BM) != 0) packet.buttons |= DSU.DataRsp.Buttons.L3;
                 if ((buttons & Buttons.BH) != 0) packet.buttons |= DSU.DataRsp.Buttons.Options;
-                if ((buttons & Buttons.SK) != 0) throw new NotImplementedException("UDPWii.DataDSU.ToDSU(): WTH is button SK?");
+                if ((buttons & Buttons.SK) != 0) packet.buttons |= DSU.DataRsp.Buttons.Share;
             }
 
             // Stick (ignored)

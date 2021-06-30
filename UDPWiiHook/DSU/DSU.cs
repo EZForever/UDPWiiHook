@@ -10,7 +10,7 @@ namespace UDPWiiHook.DSU
     */
     /*
         NOTE: Dolphin does not implement many of the buttons
-            dolphin@5.0-12247:/Source/Core/InputCommon/ControllerInterface/DualShockUDPClient/DualShockUDPClient.cpp#L333
+            dolphin@6042df7:/Source/Core/InputCommon/ControllerInterface/DualShockUDPClient/DualShockUDPClient.cpp#L509
         All the things implemented in Dolphin:
             Analog.*, Buttons.{L3, R3, Share, Options}, ButtonPS, ButtonTouch,
             Stick.*, Touch1.*, Accel.{x, y, z}, Gyro.*
